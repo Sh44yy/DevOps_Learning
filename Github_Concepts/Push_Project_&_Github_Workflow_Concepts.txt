@@ -1,0 +1,210 @@
+DEVOPS JOURNEY — GIT WORKFLOW
+Day 2: Push Code to GitHub
+
+1. IMPORTANT TERMS
+
+Working Directory
+The folder on your computer where you actually write and modify code.
+
+Local Repository
+The Git repository stored on your computer.
+It contains your project history and commits.
+
+Remote Repository
+The repository hosted on GitHub/GitLab.
+Used for sharing, collaboration and storing code remotely.
+
+Repository (Repo)
+A storage location that contains code and its version history.
+
+Staging Area
+A temporary area between the Working Directory and Local Repository.
+It contains the changes you want to include in the next commit.
+
+
+2. GIT WORKFLOW
+
+Working Directory
+       ↓
+   git add
+       ↓
+Staging Area
+       ↓
+  git commit
+       ↓
+Local Repository
+       ↓
+   git push
+       ↓
+Remote Repository (GitHub)
+
+
+3. BASIC COMMANDS
+
+Initialize Git:
+
+git init
+
+Creates a .git directory and turns the project folder into a Git repository.
+
+
+Check Git configuration:
+
+git config --list
+
+
+Add changes to staging:
+
+git add .
+
+. means add all changes from the current working directory.
+
+
+Commit changes:
+
+git commit -m "message"
+
+Creates a commit in the local repository.
+
+Example:
+
+git commit -m "Add navbar"
+
+
+Rename branch:
+
+git branch -M main
+
+Renames the current branch to main.
+
+
+Connect local repo with GitHub:
+
+git remote add origin <repository-url>
+
+origin = name/alias given to the remote repository.
+
+
+Push code to GitHub:
+
+git push -u origin main
+
+origin = remote repository
+main = branch
+-u = sets the upstream relationship for future pushes.
+
+
+4. COMPLETE FIRST PUSH
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin <repository-url>
+git push -u origin main
+
+
+5. AFTER THE FIRST PUSH
+
+When the remote is already connected:
+
+git add .
+git commit -m "Describe your changes"
+git push
+
+
+6. WHY NOT DRAG AND DROP?
+
+Uploading files directly to GitHub does not give you the normal Git workflow.
+
+With Git you get:
+
+• Version history
+• Commits
+• Branches
+• Change tracking
+• Collaboration
+• Ability to compare changes
+• Ability to revert changes
+
+For development work, use Git commands.
+
+
+7. IMPORTANT DIFFERENCE
+
+Working Directory
+→ Where I edit my files.
+
+Staging Area
+→ Changes selected for the next commit.
+
+Local Repository
+→ Committed history stored on my computer.
+
+Remote Repository
+→ Repository hosted on GitHub/GitLab.
+
+
+8. EASY REAL LIFE EXAMPLE
+
+Think of writing an assignment:
+
+Working Directory
+→ I am writing/editing the assignment.
+
+git add .
+→ I select the changes I want to save.
+
+Staging Area
+→ Selected changes are ready.
+
+git commit
+→ I officially save a version with a message.
+
+git push
+→ I send that version to GitHub.
+
+
+9. INTERVIEW QUESTIONS
+
+Q: What is a Working Directory?
+A: The project folder where we create and modify files.
+
+Q: What is a Local Repository?
+A: A Git repository stored on our computer.
+
+Q: What is a Remote Repository?
+A: A repository hosted on a remote platform such as GitHub.
+
+Q: What does git add do?
+A: Moves selected changes to the Staging Area.
+
+Q: What does git commit do?
+A: Saves staged changes as a version in the Local Repository.
+
+Q: What does git push do?
+A: Sends local commits to the Remote Repository.
+
+Q: What is the purpose of a commit message?
+A: It describes what was changed in that commit.
+
+
+QUICK REVISION
+
+EDIT
+↓
+git add .
+↓
+STAGE
+↓
+git commit -m "message"
+↓
+SAVE VERSION LOCALLY
+↓
+git push
+↓
+GITHUB
+
+
+KEY IDEA:
+Git workflow = Working Directory → Staging Area → Local Repository → Remote Repository
