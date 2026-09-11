@@ -1,0 +1,167 @@
+    # 🚀 DevOps Learning Journey — Day 1
+
+Today I started my **DevOps learning journey** through a YouTube DevOps playlist.
+
+The main goal of today's learning was to understand **what DevOps is, what a DevOps Engineer does, and what technologies I need to learn to become one.**
+
+## 📚 What I Learned
+
+### 1. What is DevOps?
+
+**DevOps = Development + Operations**
+
+DevOps is a culture and set of practices that brings software development and IT operations together.
+
+The main idea is to:
+
+* Develop software faster
+* Automate repetitive tasks
+* Test applications continuously
+* Deploy applications reliably
+* Monitor applications
+* Get fast feedback
+* Continuously improve the software
+
+### 2. Development and Operations
+
+The basic software process can be understood as:
+
+```text
+Plan
+  ↓
+Code
+  ↓
+Build
+  ↓
+Test
+  ↓
+Release
+  ↓
+Deploy
+  ↓
+Operate
+  ↓
+Monitor
+  ↓
+Feedback
+  ↺
+```
+
+DevOps connects these stages and encourages continuous collaboration between development and operations teams.
+
+## 👨‍💻 What Does a DevOps Engineer Do?
+
+A DevOps Engineer helps developers and operations teams work together efficiently.
+
+Some major responsibilities are:
+
+* Building CI/CD pipelines
+* Automating processes
+* Managing servers and infrastructure
+* Working with cloud platforms
+* Managing containers
+* Monitoring applications
+* Improving reliability and scalability
+* Managing infrastructure as code
+
+## 🛠️ Technologies I Will Learn
+
+I also got an overview of the main technologies used in DevOps:
+
+| Area                     | Technologies            |
+| ------------------------ | ----------------------- |
+| Version Control          | Git                     |
+| Code Hosting             | GitHub / GitLab         |
+| Operating System         | Linux                   |
+| CI/CD                    | Jenkins and others      |
+| Containers               | Docker                  |
+| Orchestration            | Kubernetes              |
+| Cloud                    | AWS / Azure / GCP       |
+| Configuration Management | Ansible                 |
+| Infrastructure as Code   | Terraform               |
+| Monitoring               | Grafana and other tools |
+| Scripting                | Bash / Python           |
+
+I understand that I don't need to learn all of these at once. I will learn them step by step.
+
+## 🗺️ My DevOps Roadmap
+
+My current roadmap is:
+
+```text
+Git
+ ↓
+GitHub / GitLab
+ ↓
+Linux
+ ↓
+Docker
+ ↓
+Cloud
+ ↓
+Ansible
+ ↓
+Terraform
+ ↓
+Monitoring
+ ↓
+Kubernetes
+ ↓
+CI/CD
+```
+
+This roadmap may change as I learn more and understand how the different tools fit together.
+
+## 💡 Most Important Concept
+
+The biggest thing I understood today is that **DevOps is not just about learning tools.**
+
+The important part is understanding the complete software delivery process:
+
+```text
+Code
+ ↓
+Version Control
+ ↓
+Build & Test
+ ↓
+Package
+ ↓
+Deploy
+ ↓
+Run
+ ↓
+Monitor
+ ↓
+Feedback
+ ↓
+Improve
+```
+
+The tools are used to automate and manage these stages.
+
+## 📝 Day 1 Takeaways
+
+* DevOps means Development + Operations.
+* DevOps is a culture, practices, and way of working, not a single tool.
+* Automation is a major part of DevOps.
+* CI/CD helps automate software delivery.
+* Git is used for version control.
+* GitHub/GitLab provide platforms for Git repositories and collaboration.
+* Linux is an important foundation for DevOps.
+* Docker is used for containerization.
+* Kubernetes manages containerized applications at scale.
+* Ansible is mainly used for configuration management and automation.
+* Terraform is used for Infrastructure as Code.
+* Monitoring helps us understand application and infrastructure health.
+* A good DevOps Engineer needs both technical and communication skills.
+
+## 🎯 Today's Goal
+
+Today was mainly about building my **DevOps foundation**.
+
+I am not trying to memorize every tool. My focus is to understand **why each technology exists, what problem it solves, and how everything connects together.**
+
+This is **Day 1** of my DevOps journey.
+
+> Learn → Practice → Build → Improve 🚀
