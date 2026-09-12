@@ -1,0 +1,113 @@
+# DEVOPS JOURNEY — GIT
+
+## Day 3: `.gitignore`
+
+`.gitignore` tells Git which **untracked files/folders to ignore**.
+
+```gitignore
+node_modules/
+.env
+passwords/
+*.log
+```
+
+### Common patterns
+
+```text
+file.txt       → specific file
+folder/        → folder
+*.log          → all .log files
+```
+
+Check status:
+
+```bash
+git status
+```
+
+**Important:** If a file is already tracked/committed, adding it to `.gitignore` will **not** stop tracking it.
+
+---
+
+## Day 4: `git restore`
+
+Used to undo **uncommitted changes** or unstage changes.
+
+Discard changes in one file:
+
+```bash
+git restore index.html
+```
+
+Discard changes in all files:
+
+```bash
+git restore .
+```
+
+Unstage a file:
+
+```bash
+git restore --staged app.js
+```
+
+⚠️ `git restore` can permanently remove your uncommitted changes.
+
+---
+
+## Day 5: `git revert`
+
+Used to undo a **previous commit while keeping the Git history**.
+
+View commits:
+
+```bash
+git log --oneline
+```
+
+Example:
+
+```text
+a82f91c Add login
+4b72d11 Add navbar
+91ac203 Initial commit
+```
+
+Undo a commit:
+
+```bash
+git revert a82f91c
+```
+
+Git creates a **new commit** that reverses the selected commit.
+
+### Example
+
+```text
+Commit 1 → Working code
+Commit 2 → Wrong change
+Commit 3 → Revert Commit 2
+```
+
+The old commit still exists in history.
+
+---
+
+## Quick Revision
+
+| Purpose                      | Command                     |
+| ---------------------------- | --------------------------- |
+| Ignore files                 | `.gitignore`                |
+| Undo uncommitted changes     | `git restore file`          |
+| Unstage changes              | `git restore --staged file` |
+| Undo committed change safely | `git revert <hash>`         |
+| Change branch/history        | `git reset`                 |
+
+### Short Def
+
+```text
+.gitignore → Don't track it
+restore    → Undo uncommitted changes
+revert     → Undo commit + keep history
+reset      → Move/change history
+```
