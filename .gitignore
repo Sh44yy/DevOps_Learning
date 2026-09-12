@@ -1,0 +1,3 @@
+gitignore_file_practice.html
+# if want to ignore directory -> directoryName/
+# if want to ignore file from extention name -> *.extentionName
