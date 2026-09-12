@@ -1,113 +1,128 @@
-# DEVOPS JOURNEY — GIT
+============================================================
+DEVOPS JOURNEY — GIT
+TOPIC: .gitignore, git restore, git revert
+============================================================
 
-## Day 3: `.gitignore`
 
-`.gitignore` tells Git which **untracked files/folders to ignore**.
+1. .gitignore
+------------------------------------------------------------
 
-```gitignore
+.gitignore tells Git which untracked files or folders should
+be ignored.
+
+Example:
+
 node_modules/
 .env
 passwords/
 *.log
-```
 
-### Common patterns
+Common patterns:
 
-```text
-file.txt       → specific file
-folder/        → folder
-*.log          → all .log files
-```
+file.txt       -> Ignore a specific file
+folder/        -> Ignore a folder
+*.log          -> Ignore all .log files
 
-Check status:
+Check ignored/untracked files:
 
-```bash
 git status
-```
 
-**Important:** If a file is already tracked/committed, adding it to `.gitignore` will **not** stop tracking it.
+IMPORTANT:
+.gitignore does NOT stop tracking a file that is already
+tracked or committed.
 
----
 
-## Day 4: `git restore`
+2. git restore
+------------------------------------------------------------
 
-Used to undo **uncommitted changes** or unstage changes.
+git restore is used to undo uncommitted changes or unstage
+changes.
 
 Discard changes in one file:
 
-```bash
 git restore index.html
-```
 
 Discard changes in all files:
 
-```bash
 git restore .
-```
 
 Unstage a file:
 
-```bash
 git restore --staged app.js
-```
 
-⚠️ `git restore` can permanently remove your uncommitted changes.
+IMPORTANT:
+git restore can permanently remove uncommitted changes.
 
----
 
-## Day 5: `git revert`
+3. git revert
+------------------------------------------------------------
 
-Used to undo a **previous commit while keeping the Git history**.
+git revert is used to undo the effect of an existing commit
+while keeping the commit history.
 
-View commits:
+View commit history:
 
-```bash
 git log --oneline
-```
 
 Example:
 
-```text
 a82f91c Add login
 4b72d11 Add navbar
 91ac203 Initial commit
-```
 
-Undo a commit:
+Revert a commit:
 
-```bash
 git revert a82f91c
-```
 
-Git creates a **new commit** that reverses the selected commit.
+Git creates a NEW commit that reverses the selected commit.
 
-### Example
+Example:
 
-```text
-Commit 1 → Working code
-Commit 2 → Wrong change
-Commit 3 → Revert Commit 2
-```
+Commit 1 -> Working code
+Commit 2 -> Wrong change
+Commit 3 -> Revert Commit 2
 
-The old commit still exists in history.
+The old commit is still present in the history.
 
----
 
-## Quick Revision
+4. QUICK COMPARISON
+------------------------------------------------------------
 
-| Purpose                      | Command                     |
-| ---------------------------- | --------------------------- |
-| Ignore files                 | `.gitignore`                |
-| Undo uncommitted changes     | `git restore file`          |
-| Unstage changes              | `git restore --staged file` |
-| Undo committed change safely | `git revert <hash>`         |
-| Change branch/history        | `git reset`                 |
+.gitignore
+-> Tell Git not to track specific untracked files/folders
 
-### Short Def
+git restore file
+-> Undo uncommitted changes
 
-```text
-.gitignore → Don't track it
-restore    → Undo uncommitted changes
-revert     → Undo commit + keep history
-reset      → Move/change history
-```
+git restore --staged file
+-> Remove file from staging area
+
+git revert <commit-hash>
+-> Undo a committed change while keeping history
+
+git reset
+-> Move/change Git history depending on the option used
+
+
+5. IMPORTANT GIT FACT
+------------------------------------------------------------
+
+A commit hash is an identifier for a Git commit.
+
+It is NOT encryption.
+
+Git uses the commit hash to identify a specific commit.
+
+
+6. QUICK REVISION
+------------------------------------------------------------
+
+.gitignore -> Ignore files
+restore    -> Undo uncommitted changes
+revert     -> Undo commit + keep history
+reset      -> Change/move history
+
+
+============================================================
+END
+============================================================
