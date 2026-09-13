@@ -1,0 +1,172 @@
+============================================================
+DEVOPS JOURNEY — GIT
+TOPIC: git reset
+============================================================
+
+
+1. git reset
+------------------------------------------------------------
+
+git reset moves the HEAD pointer to another commit.
+
+It can also change the Staging Area and Working Directory,
+depending on the mode used.
+
+Basic syntax:
+
+git reset <commit>
+
+Go one commit back:
+
+git reset HEAD~1
+
+Using a specific commit:
+
+git reset <commit-hash>
+
+
+2. HEAD
+------------------------------------------------------------
+
+HEAD points to the commit currently checked out.
+
+Example:
+
+Commit 1 -> Commit 2 -> Commit 3
+                         ^
+                        HEAD
+
+git reset HEAD~1
+
+Result:
+
+Commit 1 -> Commit 2
+              ^
+             HEAD
+
+
+3. git reset --soft
+------------------------------------------------------------
+
+Moves HEAD to the previous commit.
+
+The changes from the removed commit remain STAGED.
+
+Command:
+
+git reset --soft HEAD~1
+
+Useful when:
+You made the correct changes but used the wrong commit
+message and want to commit again.
+
+
+4. git reset --mixed
+------------------------------------------------------------
+
+This is the DEFAULT mode.
+
+Moves HEAD back and removes the changes from the Staging Area,
+but keeps the changes in the Working Directory.
+
+Command:
+
+git reset HEAD~1
+
+Same as:
+
+git reset --mixed HEAD~1
+
+Result:
+
+HEAD moves back
+Changes remain in files
+Changes become unstaged
+
+
+5. git reset --hard
+------------------------------------------------------------
+
+Moves HEAD back AND removes the changes from:
+
+1. Commit history
+2. Staging Area
+3. Working Directory
+
+Command:
+
+git reset --hard HEAD~1
+
+WARNING:
+Uncommitted changes can be permanently lost.
+
+Use this only when you are sure you do not need those changes.
+
+
+6. RESET MODES — QUICK COMPARISON
+------------------------------------------------------------
+
+                 HEAD    STAGING    WORKING FILES
+
+--soft            YES      KEEP          KEEP
+
+--mixed           YES      REMOVE        KEEP
+
+--hard            YES      REMOVE        REMOVE
+
+
+7. git reset vs git revert
+------------------------------------------------------------
+
+git revert:
+-> Creates a NEW commit that reverses an old commit.
+-> Keeps the original commit in history.
+-> Safer for shared/team branches.
+
+git reset:
+-> Moves HEAD to another commit.
+-> Can rewrite/remove commits from the visible branch history.
+-> Mainly useful for local/private work when you understand
+   the consequences.
+
+
+8. IMPORTANT TEAM RULE
+------------------------------------------------------------
+
+For commits already shared with a team/remote repository:
+
+Prefer:
+
+git revert <commit-hash>
+
+Avoid using reset to rewrite shared history unless you
+specifically understand the consequences and the team agrees.
+
+
+9. QUICK REVISION
+------------------------------------------------------------
+
+git reset --soft HEAD~1
+-> Remove commit
+-> Keep changes STAGED
+
+git reset HEAD~1
+-> Remove commit
+-> Keep changes UNSTAGED
+
+git reset --hard HEAD~1
+-> Remove commit
+-> Remove staged changes
+-> Remove working directory changes
+
+
+MEMORY TRICK:
+
+SOFT  -> Commit removed, changes STAGED
+MIXED -> Commit removed, changes UNSTAGED
+HARD  -> Commit + changes removed
+
+
+============================================================
+END
+============================================================
