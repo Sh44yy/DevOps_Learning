@@ -1,0 +1,274 @@
+============================================================
+DEVOPS JOURNEY — GIT
+TOPICS: GIT ALIAS + GIT BRANCHES
+============================================================
+
+
+1. GIT ALIAS
+------------------------------------------------------------
+
+Git alias = Short name for a Git command.
+
+It saves typing for frequently used commands.
+
+Example:
+
+git status
+
+Create shortcut:
+
+git config --global alias.st status
+
+Now:
+
+git st
+
+does the same as:
+
+git status
+
+
+GLOBAL ALIAS
+------------------------------------------------------------
+
+Available in all Git repositories:
+
+git config --global alias.st status
+
+Example:
+
+git config --global alias.lg "log --oneline"
+
+Now:
+
+git lg
+
+runs:
+
+git log --oneline
+
+
+REPOSITORY ONLY ALIAS
+------------------------------------------------------------
+
+Available only in the current repository:
+
+git config alias.br branch
+
+Now:
+
+git br
+
+runs:
+
+git branch
+
+
+ALIAS SYNTAX
+------------------------------------------------------------
+
+git config --global alias.<shortcut> <command>
+
+Example:
+
+git config --global alias.st status
+
+Shortcut = st
+Command  = status
+
+
+IMPORTANT
+------------------------------------------------------------
+
+Global alias:
+-> Works in every repository for your Git user.
+
+Local alias:
+-> Works only in the current repository.
+
+
+============================================================
+2. GIT BRANCH
+============================================================
+
+A branch is an independent line of development.
+
+It allows you to work on changes without directly changing
+the main development line.
+
+Simple idea:
+
+main
+ |
+ |---- feature branch
+ |
+ |---- another feature branch
+
+
+WHY USE BRANCHES?
+------------------------------------------------------------
+
+Example:
+
+main = Stable project
+
+Ali    -> animation
+Huz    -> login feature
+Fahad  -> UI changes
+
+Each person works on a separate branch.
+
+After testing/review:
+
+Good feature -> Merge into main
+Unwanted feature -> Do not merge
+
+
+MAIN BENEFIT
+------------------------------------------------------------
+
+Branches allow multiple developers to work on the same
+project safely without directly disturbing the main branch.
+
+
+============================================================
+3. CREATE A BRANCH
+============================================================
+
+Create only:
+
+git branch feature-login
+
+This creates the branch but does NOT switch to it.
+
+
+See branches:
+
+git branch
+
+The * shows the current branch.
+
+Example:
+
+* main
+  feature-login
+
+
+============================================================
+4. SWITCH BRANCH
+============================================================
+
+Modern command:
+
+git switch feature-login
+
+Older/common command:
+
+git checkout feature-login
+
+
+============================================================
+5. CREATE + SWITCH TO BRANCH
+============================================================
+
+Using checkout:
+
+git checkout -b feature-login
+
+Using modern switch:
+
+git switch -c feature-login
+
+Both:
+
+1. Create the branch
+2. Switch to the new branch
+
+
+============================================================
+6. BRANCH WORKFLOW
+============================================================
+
+main
+  |
+  |---- feature-login
+  |          |
+  |          |---- make changes
+  |          |---- git add .
+  |          |---- git commit
+  |
+  |---- merge feature-login into main
+
+
+IMPORTANT:
+------------------------------------------------------------
+
+Creating a branch does not create a completely separate
+copy of every file immediately.
+
+A branch is mainly a movable reference to a line of commits.
+When you switch branches, Git updates your working directory
+to match that branch.
+
+
+============================================================
+7. QUICK COMMANDS
+============================================================
+
+git branch
+-> List local branches
+
+git branch <name>
+-> Create branch
+
+git switch <name>
+-> Switch branch
+
+git checkout <name>
+-> Switch branch
+
+git switch -c <name>
+-> Create + switch
+
+git checkout -b <name>
+-> Create + switch
+
+git branch -M main
+-> Rename current branch to main
+
+
+============================================================
+8. QUICK REVISION
+============================================================
+
+ALIAS
+-> Shortcut for a Git command
+
+BRANCH
+-> Separate line of development
+
+git branch feature
+-> Create branch
+
+git switch feature
+-> Switch branch
+
+git switch -c feature
+-> Create + switch
+
+git checkout -b feature
+-> Create + switch
+
+
+MEMORY TRICK:
+
+branch       -> Create
+switch       -> Move
+switch -c    -> Create + Move
+checkout -b  -> Create + Move
+alias        -> Shortcut
+
+
+============================================================
+END
+============================================================
